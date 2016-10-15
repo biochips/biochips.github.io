@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <link rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <style>
+    	body {
+		 background-color: #aed698;
+		 padding: 50px;
+		 font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+		}
+
+		a {
+		 color: #00B7FF;
+		}
+	</style>
+  </head>
+  <body>
+  	<h1> Pesto is the besto!</h1>
+	<div class="row">
+    	<div class="col-xs-6">
+        	<img src="images/pesto1.png">
+       	</div>
+    	<div class="col-xs-6">
+        	<canvas id="myChart" width="400" height="400">
+    	</div>
+    </div> 
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    	var ctx = document.getElementById("myChart");
+
+		var data = {
+		    labels: ["08 Oct", "09 Oct", "10 Oct", "11 Oct","12 Oct", "13 Oct"], 
+		    datasets: [
+		        {
+		            label: "Daily Weight (g)",
+		            fill: true,
+		            lineTension: 0.1,
+		            backgroundColor: "rgba(75,192,192,0.4)",
+		            borderColor: "rgba(75,192,192,1)",
+		            borderCapStyle: 'butt',
+		            borderDash: [],
+		            borderDashOffset: 0.0,
+		            borderJoinStyle: 'miter',
+		            pointBorderColor: "rgba(75,192,192,1)",
+		            pointBackgroundColor: "#fff",
+		            pointBorderWidth: 1,
+		            pointHoverRadius: 5,
+		            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+		            pointHoverBorderColor: "rgba(220,220,220,1)",
+		            pointHoverBorderWidth: 2,
+		            pointRadius: 5,
+		            pointHitRadius: 10,
+		            data: [50, 50, 51, 51, 51, 51], 
+		            spanGaps: false,
+		        }
+		    ]
+		};
+
+		var options = {
+			scales: {
+				yAxes: [{
+					ticks: {
+						min: 0
+					}
+				}]
+			}
+		 }
+
+		var myLineChart = new Chart(ctx, {
+		    type: 'line',
+		    data: data,
+		    options: options
+		});
+	</script>
+  </body>
+</html>
